@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+      - ./sql-scripts:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_PASSWORD=Sikobe1+
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres?currentSchema=loopdfs
+
+
+
+  spring-app:
+    image: loopdfsdemo:latest
+    depends_on:
+      - postgres
+    environment:
+      DATASOURCE_LOOPDFS_URL: jdbc:postgresql://postgres:5432/postgres?currentSchema=loopdfs
+      DATASOURCE_LOOPDFS_USERNAME: postgres
+      DATASOURCE_LOOPDFS_PASSWORD: Sikobe1+
+    ports:
+      - "8060:8060"
