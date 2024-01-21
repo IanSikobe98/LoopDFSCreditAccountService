@@ -4,20 +4,6 @@ server:
   servlet:
     context-path: /loopdfs
 ---
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/postgres
-#    username: postgres
-#    password: Sikobe1+
-#    driver-class-name: org.postgresql.Driver
-#    default-schema: loopdfs
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#
-
 datasource:
       loopdfs:
         url: jdbc:postgresql://localhost:5432/postgres?currentSchema=loopdfs
@@ -36,6 +22,8 @@ datasource:
           format_sql: true
           dialect: org.hibernate.dialect.PostgreSQLDialect
           timeout: 2000
+
+swagger.enable: 'true'
 
 logging:
   config: log4j2-spring.xml
