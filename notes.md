@@ -2,7 +2,7 @@ LOOP DFS ACCOUNT AND CARD MICROSERVICE SET UP INFORMATION
 ----------------------------------------------------------------
 
 1. Set up your postgres Database and ensure your environment has java 8.
-2. Create a database with the name postgres and a schema name o loopdfs
+2. Create a database with the name postgres and a schema name of loopdfs
 3. Run all the queries for table creation and data entry in the init.sql file.
 3. Build the application by running ./mvnw clean package at the root folder of the project
 4. Run application using java -jar target/LoopDFSCreditAccount-0.0.1-SNAPSHOT.jar at the root folder of the project whist ensuring it is 
